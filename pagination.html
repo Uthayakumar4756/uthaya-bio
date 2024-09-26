@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataTable Example</title>
+
+    <!-- DataTables CSS -->
+    <link href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" rel="stylesheet">
+
+    <!-- jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+    <!-- Bootstrap CSS (Optional for styling) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-4">
+    <table id="myTable" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>SI No</th>
+                <th>Farmer Name</th>
+                <th>Mobile</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Acres</th>
+                <!-- Add more columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>John Doe</td>
+                <td>1234567890</td>
+                <td>john@example.com</td>
+                <td>Male</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jane Smith</td>
+                <td>9876543210</td>
+                <td>jane@example.com</td>
+                <td>Female</td>
+                <td>15</td>
+            </tr>
+            <!-- Additional rows here -->
+        </tbody>
+    </table>
+</div>
+
+<!-- Initialize DataTables -->
+<script>
+    $(document).ready(function () {
+        $('#myTable').DataTable({
+            "paging": true,                // Enable pagination
+            "lengthMenu": [5, 10, 25, 50],
+           // "lengthChange": false, // Define how many rows to show per page
+            "pageLength": 5,               // Default number of rows per page
+            "searching": true,            // Disable searching if not needed
+            "ordering": true               // Enable sorting on columns
+        });
+    });
+</script>
+
+</body>
+</html>
