@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const headerHTML = `
-        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="
-      background-color: #868ad0 !important;
-  ">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #868ad0 !important;
+      box-shadow: 0px 0px 15px 7px #05060a;">
             <div class="container-fluid">
               <a class="navbar-brand" href="./MyBio.html">HOME</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
