@@ -2,146 +2,452 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Uthayakumar Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Uthayakumar | Full Stack Portfolio</title>
 
+<!-- Bootstrap 5 CSS + Icons + Google Fonts for better UI -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background: #f4f7fb;
-    font-family: 'Segoe UI', sans-serif;
+    background: #f0f4f9;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    scroll-behavior: smooth;
 }
 
-/* Header */
-.header {
-    background: linear-gradient(to right, #4facfe, #00f2fe);
+/* modern gradient header */
+.gradient-header {
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb4d);
+    background-size: 200% 200%;
+    animation: subtleMove 8s ease infinite;
     color: white;
-    padding: 30px;
+    padding: 2.8rem 1rem 2rem;
     text-align: center;
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 2rem 2rem;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 2;
 }
 
-/* Profile Image */
-.profile-img {
-    width: 150px;
+@keyframes subtleMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.gradient-header h1 {
+    font-weight: 700;
+    font-size: 2.6rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 0.4rem;
+}
+
+.gradient-header h4 {
+    font-weight: 500;
+    opacity: 0.92;
+    font-size: 1.3rem;
+}
+
+/* profile image wrapper - modern floating effect */
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: -55px;
+    margin-bottom: 1.5rem;
+    z-index: 10;
+    position: relative;
+}
+
+.profile-img-modern {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
     border-radius: 50%;
     border: 5px solid white;
-    margin-top: -75px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.2);
+    background: white;
+    transition: transform 0.25s ease, box-shadow 0.3s;
 }
 
-/* Card */
-.card {
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    border: none;
+.profile-img-modern:hover {
+    transform: scale(1.02);
+    box-shadow: 0 18px 32px rgba(0,0,0,0.2);
 }
 
-/* Section title */
-.section-title {
-    color: #333;
-    border-left: 5px solid #4facfe;
-    padding-left: 10px;
-    margin-bottom: 15px;
+/* card block style - clean, elevated */
+.block-card {
+    background: white;
+    border-radius: 28px;
+    padding: 1.6rem 1.8rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.03), 0 2px 6px rgba(0,0,0,0.05);
+    transition: all 0.25s ease;
+    border: 1px solid rgba(0,0,0,0.03);
 }
 
-/* Skills */
+.block-card:hover {
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+    transform: translateY(-3px);
+}
+
+/* section title with accent */
+.section-title-block {
+    font-size: 1.65rem;
+    font-weight: 700;
+    color: #111827;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-left: 5px solid #fdbb4d;
+    padding-left: 16px;
+}
+
+.section-title-block i {
+    color: #fdbb4d;
+    font-size: 1.6rem;
+}
+
+/* skill badges modern */
 .skill-badge {
-    display: inline-block;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 20px;
-    color: white;
-    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0.45rem 1rem;
+    margin: 0.35rem 0.5rem 0.35rem 0;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    transition: transform 0.15s, background 0.2s;
+    background: #eef2ff;
+    color: #1e293b;
+    border: 1px solid #e2e8f0;
 }
 
-.skill1 { background: #ff6b6b; }
-.skill2 { background: #6c5ce7; }
-.skill3 { background: #00b894; }
-.skill4 { background: #fdcb6e; color:black; }
-.skill5 { background: #0984e3; }
+.skill-badge i {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
 
-/* Hover */
-.card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
+.skill-badge:hover {
+    transform: translateY(-2px);
+    background: #e0e7ff;
+    border-color: #cbd5e1;
+}
+
+/* custom color variation for each category (optional fun) */
+.skill-badge.java-badge { background: #fde68a; color: #78350f; }
+.skill-badge.spring-badge { background: #cffafe; color: #164e63; }
+.skill-badge.micro-badge { background: #e0f2fe; color: #0c4a6e; }
+.skill-badge.js-badge { background: #fef9c3; color: #713f12; }
+.skill-badge.db-badge { background: #dcfce7; color: #14532d; }
+
+/* experience / project styling */
+.exp-item, .project-item {
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed #e9eef3;
+}
+
+.exp-item:last-child, .project-item:last-child {
+    border-bottom: none;
+}
+
+.company-name {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0f172a;
+}
+
+.date-tag {
+    font-size: 0.75rem;
+    background: #f1f5f9;
+    padding: 0.2rem 0.7rem;
+    border-radius: 30px;
+    display: inline-block;
+    margin-left: 0.75rem;
+    font-weight: 500;
+}
+
+.project-title {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.project-title i {
+    color: #fdbb4d;
+    font-size: 1.1rem;
+}
+
+/* contact grid */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 0.8rem;
+}
+
+.contact-item {
+    background: #f8fafc;
+    padding: 0.7rem 1.2rem;
+    border-radius: 60px;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+    border: 1px solid #eef2ff;
+}
+
+.contact-item i {
+    font-size: 1.2rem;
+    color: #1e3a8a;
+    width: 24px;
+}
+
+.contact-item:hover {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-color: #cbd5e1;
+}
+
+/* responsive container spacing */
+.container-custom {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* subtle footer */
+.portfolio-footer {
+    text-align: center;
+    padding: 2rem 1rem 2rem;
+    font-size: 0.85rem;
+    color: #5b6e8c;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 1rem;
+    background: white;
+    border-radius: 28px 28px 0 0;
+}
+
+@media (max-width: 640px) {
+    .gradient-header h1 { font-size: 1.9rem; }
+    .block-card { padding: 1.2rem; }
+    .section-title-block { font-size: 1.4rem; }
+    .contact-grid { flex-direction: column; gap: 0.7rem; }
+    .contact-item { width: fit-content; }
 }
 </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<div class="header">
-    <h1>UTHAYAKUMAR V</h1>
-    <h4>Full Stack Developer</h4>
+<!-- HEADER block with gradient -->
+<div class="gradient-header">
+    <div class="container-custom">
+        <h1>UTHayakumar V</h1>
+        <h4>Full Stack Developer | Java & Spring Expert</h4>
+        <div class="mt-3">
+            <span class="badge bg-light text-dark px-3 py-2 rounded-pill shadow-sm"><i class="fas fa-code me-1"></i> 3+ Years Exp</span>
+            <span class="badge bg-light text-dark px-3 py-2 rounded-pill shadow-sm ms-2"><i class="fas fa-microservice me-1"></i> Microservices</span>
+        </div>
+    </div>
 </div>
 
-<div class="container text-center">
-    <!-- IMAGE (IMPORTANT PATH FIX) -->
-    <img src="assets/images/WhatsApp_Image_2024-05-16_at_1.08.30_PM-removebg-preview__1_-removebg-preview.png" class="profile-img mt-3" alt="Profile Image">
+<!-- Profile Image (robust fallback + modern style) -->
+<div class="profile-wrapper">
+    <img src="assets/images/WhatsApp_Image_2024-05-16_at_1.08.30_PM-removebg-preview__1_-removebg-preview.png" 
+         alt="Uthayakumar profile" 
+         class="profile-img-modern"
+         onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?background=fdbb4d&color=fff&bold=true&size=140&name=U+V&rounded=true';">
 </div>
 
-<div class="container mt-4">
+<div class="container-custom">
+    
+    <!-- SUMMARY BLOCK (Block style) -->
+    <div class="block-card">
+        <div class="section-title-block">
+            <i class="fas fa-user-astronaut"></i> 
+            <span>Professional Summary</span>
+        </div>
+        <p class="mb-0" style="font-size: 1rem; line-height: 1.5; color: #1f2937;">
+            🔥 Java Developer with 3+ years of hands-on experience in <strong>Spring Boot, Microservices, and full-stack development</strong>. 
+            Proven ability to build scalable, resilient backend systems and modern web applications. Passionate about clean code, 
+            system design, and delivering high-impact solutions in fast-paced environments.
+        </p>
+    </div>
 
-<!-- SUMMARY -->
-<div class="card p-3 mb-4">
-    <h4 class="section-title">Professional Summary</h4>
-    <p>
-        Java Developer with 3+ years of experience in Spring Boot, Microservices, and full-stack development.
-        Passionate about building scalable applications and clean code.
-    </p>
+    <!-- SKILLS BLOCK with categorized icons and badges -->
+    <div class="block-card">
+        <div class="section-title-block">
+            <i class="fas fa-cogs"></i>
+            <span>Technical Skills</span>
+        </div>
+        <div class="d-flex flex-wrap">
+            <span class="skill-badge java-badge"><i class="fab fa-java"></i> Java (8/11/17)</span>
+            <span class="skill-badge spring-badge"><i class="fas fa-leaf"></i> Spring Boot</span>
+            <span class="skill-badge micro-badge"><i class="fas fa-network-wired"></i> Microservices</span>
+            <span class="skill-badge"><i class="fab fa-js"></i> JavaScript / ES6</span>
+            <span class="skill-badge db-badge"><i class="fas fa-database"></i> MySQL / PostgreSQL</span>
+            <span class="skill-badge"><i class="fab fa-bootstrap"></i> Bootstrap 5</span>
+            <span class="skill-badge"><i class="fas fa-cloud"></i> REST APIs</span>
+            <span class="skill-badge"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+            <span class="skill-badge spring-badge"><i class="fas fa-microchip"></i> Hibernate / JPA</span>
+            <span class="skill-badge"><i class="fas fa-code-branch"></i> HTML5 / CSS3</span>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE BLOCK (clean timeline style) -->
+    <div class="block-card">
+        <div class="section-title-block">
+            <i class="fas fa-briefcase"></i>
+            <span>Work Experience</span>
+        </div>
+        <div class="exp-item">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <div>
+                    <span class="company-name"><i class="fas fa-building me-2 text-primary"></i>Ariztid Technologies Pvt Ltd</span>
+                    <span class="date-tag"><i class="far fa-calendar-alt me-1"></i>Dec 2022 – Present</span>
+                </div>
+            </div>
+            <p class="mt-2 mb-0 text-secondary" style="font-size: 0.92rem;">
+                Senior Java Backend Developer · Architecting microservices, designing RESTful APIs for enterprise applications, 
+                and optimizing database queries. Collaborated with cross-functional teams to deliver high-throughput systems.
+            </p>
+        </div>
+        <div class="exp-item mt-2">
+            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                <div>
+                    <span class="company-name"><i class="fas fa-laptop-code me-2 text-primary"></i>Freelance Full Stack Dev</span>
+                    <span class="date-tag"><i class="far fa-calendar-alt me-1"></i>2021 – 2022</span>
+                </div>
+            </div>
+            <p class="mt-2 mb-0 text-secondary" style="font-size: 0.92rem;">
+                Developed and deployed multiple full-stack web apps using Spring Boot + React, integrated payment gateways, and improved performance.
+            </p>
+        </div>
+    </div>
+
+    <!-- PROJECTS BLOCK (showcasing core work) -->
+    <div class="block-card">
+        <div class="section-title-block">
+            <i class="fas fa-rocket"></i>
+            <span>Projects</span>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-title">
+                <i class="fas fa-headset"></i>Aries to Farmer
+            </div>
+            <p class="mt-1 mb-2 text-secondary" style="font-size: 0.9rem;">
+                Engineered high-performance APIs and real-time call management workflows using Spring Boot, Java, MySql. 
+                Reduced ticket resolution time by 25%.
+            </p>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-title">
+                <i class="fas fa-robot"></i> Aries Bot – AI Agriculture Assistant
+            </div>
+            <p class="mt-1 mb-2 text-secondary" style="font-size: 0.9rem;">
+                AI-driven chatbot offering crop recommendations, weather insights, and disease prediction. Integrated NLP models and 
+                Spring Boot backend with real-time data sync.
+            </p>
+        </div>
+        
+        <div class="project-item">
+            <div class="project-title">
+                <i class="fas fa-shopping-cart"></i> Purchase Management System
+            </div>
+            <p class="mt-1 mb-0 text-secondary" style="font-size: 0.9rem;">
+                Supplier bidding & procurement workflow system with dynamic approval chains, built with Microservices, Eureka, and 
+                Angular dashboard. Reduced procurement cycle time by 30%.
+            </p>
+        </div>
+    </div>
+
+    <!-- ADDITIONAL ACHIEVEMENTS / CERTIFICATIONS BLOCK (extra block) -->
+    <div class="block-card">
+        <div class="section-title-block">
+            <i class="fas fa-trophy"></i>
+            <span>Certifications & Achievements</span>
+        </div>
+        <div class="row g-2">
+            <div class="col-md-6">
+                <div class="d-flex align-items-center gap-2 mb-2">
+                    <i class="fas fa-certificate text-warning"></i>
+                    <span>Java Selenium</span>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+
+    <!-- CONTACT BLOCK (rich interaction) -->
+    <div class="block-card">
+        <div class="section-title-block">
+            <i class="fas fa-address-card"></i>
+            <span>Let's Connect</span>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i> <span>+91 8344754763</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i> <span>uthayakumar.venkattachalam@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i> <span>Coimbatore, Tamil Nadu, India</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i> <span>https://www.linkedin.com/in/uthayakumar-venkatachalam-017754249/</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i> <span>https://uthayakumar4756.github.io/uthaya-bio/MyBio.html</span>
+            </div>
+        </div>
+        <hr class="my-3">
+        <div class="text-muted small d-flex gap-3 flex-wrap">
+            <span><i class="fas fa-globe"></i> Open to remote/hybrid</span>
+        </div>
+    </div>
+    
+    <!-- small note: image fallback handled, each block is clearly a "block" portfolio element -->
 </div>
 
-<!-- SKILLS -->
-<div class="card p-3 mb-4">
-    <h4 class="section-title">Skills</h4>
+<!-- simple footer block -->
+<footer class="portfolio-footer">
+    <div class="container-custom">
+        <span>© 2026 Uthayakumar V — Built with <i class="fas fa-heart" style="color: #e11d48;"></i> using Bootstrap 5 & modern UI blocks</span>
+        <div class="mt-2">
+            <i class="fab fa-twitter me-2"></i> <i class="fab fa-dev"></i>
+        </div>
+    </div>
+</footer>
 
-    <span class="skill-badge skill1">Java</span>
-    <span class="skill-badge skill2">Spring Boot</span>
-    <span class="skill-badge skill3">Microservices</span>
-    <span class="skill-badge skill4">HTML/CSS</span>
-    <span class="skill-badge skill5">JavaScript</span>
-    <span class="skill-badge skill1">Hibernate</span>
-    <span class="skill-badge skill2">MySQL</span>
-    <span class="skill-badge skill3">REST API</span>
-    <span class="skill-badge skill4">Bootstrap</span>
-    <span class="skill-badge skill5">Git</span>
-
-</div>
-
-<!-- EXPERIENCE -->
-<div class="card p-3 mb-4">
-    <h4 class="section-title">Experience</h4>
-    <b>Ariztid Technologies Pvt Ltd</b><br>
-    <small>Dec 2022 - Present</small>
-    <p>Java Backend Developer working on enterprise applications and APIs.</p>
-</div>
-
-<!-- PROJECTS -->
-<div class="card p-3 mb-4">
-    <h4 class="section-title">Projects</h4>
-
-    <b>Call Center Application</b>
-    <p>Developed APIs and workflows for call management system.</p>
-
-    <b>Aries Bot</b>
-    <p>AI agriculture chatbot with crop recommendation system.</p>
-
-    <b>Purchase Management</b>
-    <p>Supplier bidding and procurement workflow system.</p>
-
-</div>
-
-<!-- CONTACT -->
-<div class="card p-3 mb-4">
-    <h4 class="section-title">Contact</h4>
-    <p>📞 8344754763</p>
-    <p>📧 uthayakumar.venkattachalam@gmail.com</p>
-    <p>📍 Coimbatore</p>
-</div>
-
-</div>
-
+<!-- optional bootstrap JS bundle (only for interaction if needed) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Optional: log to confirm image fallback not needed but ready
+    console.log("Portfolio blocks loaded — clean block-style UI ready");
+    // small dynamic for skill hover friendly
+    const badges = document.querySelectorAll('.skill-badge');
+    badges.forEach(b => {
+        b.addEventListener('click', () => {
+            // just subtle interaction, no required behavior
+        });
+    });
+</script>
 </body>
 </html>
