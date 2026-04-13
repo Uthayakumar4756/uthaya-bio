@@ -9,173 +9,136 @@
 
 <style>
 body {
-    background: #0f2027;
-    color: #fff;
+    background: #f4f7fb;
     font-family: 'Segoe UI', sans-serif;
 }
 
-.section {
-    margin-top: 40px;
+/* Header */
+.header {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
 }
 
+/* Profile Image */
+.profile-img {
+    width: 150px;
+    border-radius: 50%;
+    border: 5px solid white;
+    margin-top: -75px;
+}
+
+/* Card */
 .card {
-    background: rgba(255,255,255,0.05);
-    border: none;
     border-radius: 15px;
-    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: none;
 }
 
-h2 {
-    border-left: 5px solid #00c6ff;
+/* Section title */
+.section-title {
+    color: #333;
+    border-left: 5px solid #4facfe;
     padding-left: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
+/* Skills */
 .skill-badge {
     display: inline-block;
-    background: #00c6ff;
-    color: black;
-    padding: 5px 10px;
-    border-radius: 10px;
+    padding: 8px 12px;
     margin: 5px;
+    border-radius: 20px;
+    color: white;
     font-size: 14px;
 }
 
-.timeline {
-    border-left: 2px solid #00c6ff;
-    padding-left: 20px;
-}
+.skill1 { background: #ff6b6b; }
+.skill2 { background: #6c5ce7; }
+.skill3 { background: #00b894; }
+.skill4 { background: #fdcb6e; color:black; }
+.skill5 { background: #0984e3; }
 
-.timeline-item {
-    margin-bottom: 20px;
-}
-
-a {
-    color: #00c6ff;
+/* Hover */
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
 }
 </style>
 </head>
 
 <body>
 
-<div class="container">
-
 <!-- HEADER -->
-<div class="text-center mt-4">
+<div class="header">
     <h1>UTHAYAKUMAR V</h1>
-    <h4>FULL STACK DEVELOPER</h4>
+    <h4>Full Stack Developer</h4>
 </div>
 
+<div class="container text-center">
+    <!-- IMAGE (IMPORTANT PATH FIX) -->
+    <img src="assets/images/profile.png" class="profile-img mt-3" alt="Profile Image">
+</div>
+
+<div class="container mt-4">
+
 <!-- SUMMARY -->
-<div class="section">
-    <h2>Professional Summary</h2>
-    <div class="card">
-        <p>
-        A results-driven Java Developer with 3+ years of experience in Java, Spring Boot, and full-stack development.
-        Focused on delivering high-quality solutions, improving performance, and collaborating effectively.
-        </p>
-    </div>
+<div class="card p-3 mb-4">
+    <h4 class="section-title">Professional Summary</h4>
+    <p>
+        Java Developer with 3+ years of experience in Spring Boot, Microservices, and full-stack development.
+        Passionate about building scalable applications and clean code.
+    </p>
 </div>
 
 <!-- SKILLS -->
-<div class="section">
-    <h2>Skills</h2>
-    <div class="card">
-        <span class="skill-badge">Core Java</span>
-        <span class="skill-badge">Spring Boot</span>
-        <span class="skill-badge">Spring MVC</span>
-        <span class="skill-badge">Microservices</span>
-        <span class="skill-badge">Hibernate</span>
-        <span class="skill-badge">JSP</span>
-        <span class="skill-badge">JWT</span>
-        <span class="skill-badge">OAuth</span>
-        <span class="skill-badge">HTML5</span>
-        <span class="skill-badge">CSS3</span>
-        <span class="skill-badge">JavaScript</span>
-        <span class="skill-badge">AJAX</span>
-        <span class="skill-badge">JSON</span>
-        <span class="skill-badge">Bootstrap</span>
-        <span class="skill-badge">MySQL</span>
-        <span class="skill-badge">Tomcat</span>
-        <span class="skill-badge">jQuery</span>
-        <span class="skill-badge">Git</span>
-    </div>
-</div>
+<div class="card p-3 mb-4">
+    <h4 class="section-title">Skills</h4>
 
-<!-- LANGUAGES -->
-<div class="section">
-    <h2>Languages</h2>
-    <div class="card">
-        <p>English (Fluent), Tamil</p>
-    </div>
+    <span class="skill-badge skill1">Java</span>
+    <span class="skill-badge skill2">Spring Boot</span>
+    <span class="skill-badge skill3">Microservices</span>
+    <span class="skill-badge skill4">HTML/CSS</span>
+    <span class="skill-badge skill5">JavaScript</span>
+    <span class="skill-badge skill1">Hibernate</span>
+    <span class="skill-badge skill2">MySQL</span>
+    <span class="skill-badge skill3">REST API</span>
+    <span class="skill-badge skill4">Bootstrap</span>
+    <span class="skill-badge skill5">Git</span>
+
 </div>
 
 <!-- EXPERIENCE -->
-<div class="section">
-    <h2>Work Experience</h2>
-    <div class="card timeline">
-
-        <div class="timeline-item">
-            <h5>Ariztid Technologies Pvt Ltd</h5>
-            <small>Dec 2022 - Present</small>
-            <p>Java Backend Developer</p>
-        </div>
-
-    </div>
+<div class="card p-3 mb-4">
+    <h4 class="section-title">Experience</h4>
+    <b>Ariztid Technologies Pvt Ltd</b><br>
+    <small>Dec 2022 - Present</small>
+    <p>Java Backend Developer working on enterprise applications and APIs.</p>
 </div>
 
 <!-- PROJECTS -->
-<div class="section">
-    <h2>Projects</h2>
-    <div class="card">
+<div class="card p-3 mb-4">
+    <h4 class="section-title">Projects</h4>
 
-        <h5>Call Center Application</h5>
-        <p>Developed a full workflow-based system with REST APIs, MySQL, and React frontend.</p>
+    <b>Call Center Application</b>
+    <p>Developed APIs and workflows for call management system.</p>
 
-        <h5>Aries Bot (AI Agriculture App)</h5>
-        <p>AI chatbot + crop recommendation system using Spring Boot & Python.</p>
+    <b>Aries Bot</b>
+    <p>AI agriculture chatbot with crop recommendation system.</p>
 
-        <h5>Aries Khazaana</h5>
-        <p>Mobile e-commerce system with API integrations and approval workflows.</p>
+    <b>Purchase Management</b>
+    <p>Supplier bidding and procurement workflow system.</p>
 
-        <h5>Purchase Management System</h5>
-        <p>Supplier bidding and procurement system with Node.js & React.</p>
-
-    </div>
-</div>
-
-<!-- EDUCATION -->
-<div class="section">
-    <h2>Education</h2>
-    <div class="card">
-        <p><b>B.E Computer Science</b> - Anna University (2016-2019)</p>
-        <p><b>Diploma</b> - Polytechnic (2013-2016)</p>
-    </div>
-</div>
-
-<!-- SOFT SKILLS -->
-<div class="section">
-    <h2>Soft Skills</h2>
-    <div class="card">
-        <ul>
-            <li>Problem-solving</li>
-            <li>Performance Optimization</li>
-            <li>Team Collaboration</li>
-            <li>Agile Methodology</li>
-        </ul>
-    </div>
 </div>
 
 <!-- CONTACT -->
-<div class="section mb-5">
-    <h2>Contact</h2>
-    <div class="card">
-        <p>📞 8344754763</p>
-        <p>📧 uthayakumar.venkattachalam@gmail.com</p>
-        <p>📍 Coimbatore</p>
-        <p><a href="https://uthayakumar4756.github.io/uthaya-io/">Portfolio</a></p>
-        <p><a href="https://www.linkedin.com/in/uthayakumar-venkatachalam-017754249/">LinkedIn</a></p>
-    </div>
+<div class="card p-3 mb-4">
+    <h4 class="section-title">Contact</h4>
+    <p>📞 8344754763</p>
+    <p>📧 uthayakumar.venkattachalam@gmail.com</p>
+    <p>📍 Coimbatore</p>
 </div>
 
 </div>
